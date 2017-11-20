@@ -57,3 +57,12 @@ case "$shell" in
     load_zsh_package_completions
     ;;
 esac
+
+# user's alias 
+scriptDir=$(cd $(dirname $0); pwd)
+
+for j in `find ${scriptDir}/../cellar/packages/ -iname "alias*" -type f`
+do
+    source $j
+done
+
